@@ -2,9 +2,154 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>$Title$</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="apple-mobile-web-app-title" content="test">
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <title>Title</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            background-color: #000;
+        }
+
+        #oval {
+            width: 100vw;
+            height: 2vw;
+            background: url('./img/street_theme.jpg') no-repeat center center;
+            background-size: 100vw 100vh;
+            /*  -moz-border-radius: 100px / 50px;*/
+            -webkit-border-radius: 50vw / 1vw;
+            border-radius: 50vw / 1vw;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+
+            -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+
+            -webkit-filter: blur(10px);
+            filter: blur(10px);
+
+            /*animation: name duration timing-function delay iteration-count direction;*/
+            -webkit-animation: eyes_blink 4s linear 1s forwards;
+            animation: eyes_blink 4s linear 1s forwards;
+        }
+
+        @-webkit-keyframes eyes_blink {
+            from {
+                height: 2vw;
+                -webkit-border-radius: 50vw / 1vw;
+                border-radius: 50vw / 1vw;
+                -webkit-filter: blur(10px);
+                filter: blur(10px);
+            }
+            20% {
+                height: 30vw;
+                -webkit-border-radius: 50vw / 15vw;
+                border-radius: 50vw / 15vw;
+            }
+            40% {
+                height: 2vw;
+                -webkit-border-radius: 50vw / 1vw;
+                border-radius: 50vw / 1vw;
+            }
+            60% {
+                height: 36vw;
+                -webkit-border-radius: 50vw / 18vw;
+                border-radius: 50vw / 18vw;
+            }
+            75% {
+                height: 2vw;
+                -webkit-border-radius: 50vw / 1vw;
+                border-radius: 50vw / 1vw;
+            }
+            85% {
+                height: 40vw;
+                -webkit-border-radius: 50vw / 20vw;
+                border-radius: 50vw / 20vw;
+            }
+            98% {
+                    height: 100vw;
+                -webkit-border-radius: 50vw / 50vw;
+                border-radius: 50vw / 50vw;
+                -webkit-filter: blur(5px);
+                filter: blur(5px);
+            }
+            to {
+                /*-webkit-transform: scale(10, 10);*/
+                /*transform: scale(10, 10);*/
+                -webkit-filter: blur(0);
+                filter: blur(0);
+                height: 100vh;
+                border-radius: 0;
+            }
+        }
+
+        /*@keyframes eyes_blink {*/
+            /*from {*/
+                /*height: 2vw;*/
+                /*-webkit-border-radius: 50vw / 1vw;*/
+                /*border-radius: 50vw / 1vw;*/
+                /*-webkit-filter: blur(10px);*/
+                /*filter: blur(10px);*/
+            /*}*/
+            /*10% {*/
+                /*height: 20vw;*/
+                /*-webkit-border-radius: 50vw / 10vw;*/
+                /*border-radius: 50vw / 10vw;*/
+            /*}*/
+            /*15% {*/
+                /*height: 16vw;*/
+                /*-webkit-border-radius: 50vw / 8vw;*/
+                /*border-radius: 50vw / 8vw;*/
+            /*}*/
+            /*20% {*/
+                /*height: 30vw;*/
+                /*-webkit-border-radius: 50vw / 15vw;*/
+                /*border-radius: 50vw / 15vw;*/
+            /*}*/
+            /*25% {*/
+                /*height: 26vw;*/
+                /*-webkit-border-radius: 50vw / 13vw;*/
+                /*border-radius: 50vw / 13vw;*/
+            /*}*/
+            /*30% {*/
+                /*height: 40vw;*/
+                /*-webkit-border-radius: 50vw / 20vw;*/
+                /*border-radius: 50vw / 20vw;*/
+            /*}*/
+            /*50% {*/
+                /*height: 100vw;*/
+                /*-webkit-border-radius: 50vw / 50vw;*/
+                /*border-radius: 50vw / 50vw;*/
+                /*-webkit-filter: blur(5px);*/
+                /*filter: blur(5px);*/
+            /*}*/
+            /*to {*/
+                /*-webkit-filter: blur(0);*/
+                /*filter: blur(0);*/
+                /*height: 100vh;*/
+                /*border-radius: 0;*/
+            /*}*/
+        /*}*/
+
+        .img {
+            display: none;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            filter: blur(10px);
+            -webkit-filter: blur(10px);
+        }
+
+
+    </style>
 </head>
 <body>
-$END$
+<div id="oval"></div>
+<img class="img" src="./img/street_theme.jpg" alt="">
 </body>
 </html>
