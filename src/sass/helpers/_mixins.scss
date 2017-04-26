@@ -3,3 +3,7 @@
     background-repeat: #{$repeat};
     background-position: #{$x}px #{$y}px;
 }
+@mixin prefix($k, $v...) {
+    #{$k}: $v;
+    -webkit-#{$k}: $v;
+}

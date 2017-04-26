@@ -1,0 +1,57 @@
+@import "../helpers/functions";
+@import "../helpers/mixins";
+
+.loading-page {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    background: rgba(0, 0, 0, 1);
+
+    @at-root #{&}__tire {
+        width: px2rem(128);
+        height: px2rem(128);
+        background: url("../images/loading-tire.png") no-repeat center center;
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        margin-top: px2rem(-64);
+        margin-left: px2rem(-64);
+        @include prefix(animation, loading-circle 2s infinite linear);
+    }
+
+    @at-root #{&}__process {
+        width: 100%;
+        height: px2rem(60);
+        position: absolute;
+        top: 50%;
+        text-align: center;
+        color: white;
+    }
+}
+
+@keyframes loading-circle {
+    from {
+        @include prefix(transform, rotate(0deg));
+    }
+    50% {
+        @include prefix(transform, rotate(180deg));
+    }
+    to {
+        @include prefix(transform, rotate(360deg));
+    }
+}
+
+@-webkit-keyframes loading-circle {
+    from {
+        @include prefix(transform, rotate(0deg));
+    }
+    50% {
+        @include prefix(transform, rotate(180deg));
+    }
+    to {
+        @include prefix(transform, rotate(360deg));
+    }
+}
