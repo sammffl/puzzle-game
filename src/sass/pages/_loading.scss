@@ -24,11 +24,26 @@
 
     @at-root #{&}__process {
         width: 100%;
-        height: px2rem(60);
+        height: px2rem(30);
         position: absolute;
         top: 50%;
         text-align: center;
         color: white;
+    }
+
+    @at-root #{&}__startBtn {
+        position: absolute;
+        top: 60%;
+        left: 50%;
+        @include prefix(transform, translate(-50%, -50%));
+        text-align: center;
+        width: px2rem(100);
+        height: px2rem(30);
+        font-size: px2rem(20);
+        line-height: px2rem(30);
+        color: #fff;
+        border: 1px solid #ffffff;
+        border-radius: px2rem(10);
     }
 }
 

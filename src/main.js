@@ -1,14 +1,23 @@
 import './sass/main.scss';
 import './utils/rem';
-// import Api from './api';
+import Process from './js/process';
+
+let processNum = null;
 
 (function () {
-    console.log(1);
-    // Api.getMobileUseful('13482437881').then(function (data) {
-    //     console.log(data);
-    // });
-    //
-    // alert(navigator.userAgent);
-
-
+    const $process = $('.loading-page__process span');
+    processNum = new Process($process, {
+        readyMilliseconds: 100,
+        loadMilliseconds: 300
+    });
+    processNum.ready();
 })();
+
+window.addEventListener('load', () => {
+    processNum.load(() => {
+        // alert('loading结束');
+    });
+    console.log('load');
+    // console.log(this.optionValue)
+});
+
