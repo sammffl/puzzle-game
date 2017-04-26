@@ -1,0 +1,131 @@
+@import "../helpers/functions";
+@import "../helpers/mixins";
+
+.section-one {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    background-color: #000;
+
+    @at-root #{&}__blink {
+        width: 100vw;
+        height: 2vw;
+        background: url('../images/street_theme.jpg') no-repeat center center;
+        background-size: 100vw 100vh;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+    }
+
+    @at-root #{&}__blink--active {
+        @include prefix(animation, eyes_blink 4s linear 1s forwards);
+    }
+}
+
+@-webkit-keyframes eyes_blink {
+    from {
+        height: 2vw;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+    }
+    20% {
+        height: 30vw;
+        -webkit-border-radius: 50vw / 15vw;
+        border-radius: 50vw / 15vw;
+    }
+    40% {
+        height: 2vw;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+    }
+    60% {
+        height: 36vw;
+        -webkit-border-radius: 50vw / 18vw;
+        border-radius: 50vw / 18vw;
+    }
+    75% {
+        height: 2vw;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+    }
+    85% {
+        height: 40vw;
+        -webkit-border-radius: 50vw / 20vw;
+        border-radius: 50vw / 20vw;
+    }
+    99% {
+        height: 100vw;
+        -webkit-border-radius: 50vw / 50vw;
+        border-radius: 50vw / 50vw;
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+    }
+    to {
+        /*-webkit-transform: scale(10, 10);*/
+        /*transform: scale(10, 10);*/
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        height: 100vh;
+        border-radius: 0;
+    }
+}
+
+@keyframes eyes_blink {
+    from {
+        height: 2vw;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+        -webkit-filter: blur(10px);
+        filter: blur(10px);
+    }
+    20% {
+        height: 30vw;
+        -webkit-border-radius: 50vw / 15vw;
+        border-radius: 50vw / 15vw;
+    }
+    40% {
+        height: 2vw;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+    }
+    60% {
+        height: 36vw;
+        -webkit-border-radius: 50vw / 18vw;
+        border-radius: 50vw / 18vw;
+    }
+    75% {
+        height: 2vw;
+        -webkit-border-radius: 50vw / 1vw;
+        border-radius: 50vw / 1vw;
+    }
+    85% {
+        height: 40vw;
+        -webkit-border-radius: 50vw / 20vw;
+        border-radius: 50vw / 20vw;
+    }
+    99% {
+        height: 100vw;
+        -webkit-border-radius: 50vw / 50vw;
+        border-radius: 50vw / 50vw;
+        -webkit-filter: blur(5px);
+        filter: blur(5px);
+    }
+    to {
+        /*-webkit-transform: scale(10, 10);*/
+        /*transform: scale(10, 10);*/
+        -webkit-filter: blur(0);
+        filter: blur(0);
+        height: 100vh;
+        border-radius: 0;
+    }
+}

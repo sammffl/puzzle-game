@@ -1,6 +1,7 @@
 import './sass/main.scss';
 import './utils/rem';
 import Process from './js/process';
+import SectionOne from './js/sectionOne';
 
 let processNum = null;
 
@@ -15,16 +16,14 @@ let processNum = null;
 
 window.addEventListener('load', () => {
     processNum.load(() => {
-        // alert('loading结束');
         $('.loading-page__startBtn').show(100);
     });
-    console.log('load');
-    // console.log(this.optionValue)
 });
 
 
 (function () {
     $('.loading-page__startBtn').bind('touchend', function (e) {
         $('.loading-page').hide();
+        new SectionOne();
     });
 })();
